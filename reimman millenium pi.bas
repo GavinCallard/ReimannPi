@@ -1,0 +1,22 @@
+10 GO SUB 100
+20 FOR f=1 TO iterations
+30 LET n=n+FN s(s,f)
+40 PRINT AT 0,10;f
+50 PRINT AT 1,10;n
+60 PRINT AT 3,10;SQR (n*6)
+70 NEXT f
+80 REM slow
+90 STOP 
+100 CLS 
+110 LET iterations=100000
+120 INPUT "s:";s: IF s=1 THEN GO TO 120
+130 REM fast
+140 DEF FN s(s,i)=1/(i^s)
+150 LET n=0
+160 PRINT AT 0,0;"Iteration:"
+170 PRINT AT 1,0;"n:"
+180 PRINT AT 2,0;"(PI^2)/6 :";(PI^2)/6
+190 PRINT AT 3,0;"SQR (n*6):"
+200 PRINT AT 4,0;"PI:       ";PI
+210 PRINT AT 5,0;"s:        ";s
+220 GO TO 20
